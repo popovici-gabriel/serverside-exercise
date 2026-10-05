@@ -39,4 +39,3 @@ I split the findings into three categories:  high, medium and low. The high cate
 | 19 | `TestTransactionService` | Tests | The hardcoded count is fragile, as #1 shows. Assert against `SELECT count(*)` instead. |
 | 20 | General | Clarity | Bean id typo `transactionServiceFascade`. Tabs and spaces are mixed. `StoredProcExecutor` builds its placeholder list by concatenating strings in a loop; `String.join(",", Collections.nCopies(n, "?"))` is simpler. Interfaces expose `ArrayList`/`HashMap` where `List`/`Map` would do. The web module lacks the `-Werror` lint settings the other two modules have. |
 
-The fixes I'd start with are #1, #2 and #5.
